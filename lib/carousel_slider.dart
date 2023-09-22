@@ -269,9 +269,11 @@ class CarouselSliderState extends State<CarouselSlider>
       }
       return Transform.scale(child: child, scale: scale!, alignment: alignment);
     }
-    return Transform.scale(
+    return Opacity(
+        opacity: (scale! - 0.8) * 5,
+        child: Transform.scale(
         scale: scale!,
-        child: Container(child: child, width: width, height: height));
+        child: Container(child: child, width: width, height: height)));
   }
 
   void onStart() {
